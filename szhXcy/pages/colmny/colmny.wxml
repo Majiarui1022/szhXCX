@@ -1,0 +1,122 @@
+<!-- l轮播图 -->
+<view>
+  <view class="wrap">
+    <swiper indicator-color="{{yuanshi}}" indicator-active-color="{{zhihou}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{duration}}" current="{{swiperCurrent}}" bindchange="swiperChange" class="slider">
+      <block>
+        <swiper-item wx:for="{{peojectxiang.proimages}}" wx:key='index'>
+          <image src='{{item.name}}' class="slide-image" width="100%" height="288"></image>
+        </swiper-item>
+        <!-- <swiper-item>
+          <image src='../assets/icons/1.png' class="slide-image" width="100%" height="288"></image>
+        </swiper-item> 
+        <swiper-item>
+          <image src='../assets/icons/1.png' class="slide-image" width="100%" height="288"></image>
+        </swiper-item> 
+        <swiper-item>
+          <image src='../assets/icons/1.png' class="slide-image" width="100%" height="288"></image>
+        </swiper-item> -->
+      </block>
+    </swiper>
+  </view>
+  <!-- 款项 -->
+  <view class="money">
+    <view class="money-menu">
+      <view class="money-left">
+        <text class="mu-price">{{peojectxiang.targetamount}}</text>
+        <text class="size-c">目标金额(元)</text>
+      </view>
+      <view class="money-cont">
+        <text class="yi-price">{{peojectxiang.preparationamount}}</text>
+        <text class="size-c">已筹金额(元)</text>
+      </view>
+      <view class="money-right">
+        <text class="pro-num">{{peojectxiang.num}}</text>
+        <text class="size-c">帮助次数</text>
+      </view>
+    </view>
+  </view>
+  <!-- 主题 -->
+  <view class='menu-con'>
+    <view class="qi-logo">
+      <view class="logo-img">
+        <image src='../assets/icons/fuwu.png' class='logo-fuw'></image>
+        <image wx:for="{{peojectxiang.prologos}}" src='{{item.logo}}' class='logo-sh'></image>
+      </view>
+    </view>
+    <view class='cont-chou'>
+      <!-- 文字 -->
+      <view class='cont-word'>
+        <text class='chou-tit'>筹款说明</text>
+        <view class="chou-wen {{start == false? 'kai' : ''}}">
+          {{peojectxiang.projectintroduction}}
+        </view>
+      </view>
+      <!-- 展示文字 视频 -->
+      <view>
+        <view class='show-wv'>
+          <view class='zhe'></view>
+          <view class='show-word'>
+            <view class="word-tit" bindtap="consad">{{words}}</view>
+          </view>
+          <view class='show-viid'>
+            <video id='myNewVideo' src='{{voidUrl}}' controls="{{controls}}" autoplay="{{autoplays}}" danmu-btn="{{danmuBtn}}"   show-center-play-btn="{{showCenter}}" object-fit="{{objectFit}}" auto-pause-if-open-native="{{autoPause}}"></video>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 支付 -->
+  <view class='footer'>
+    <view class='footer-zhuan' style='width:80rpx;'>
+    <button open-type="share" type="warn" bindtap='onShareAppMessage' style='width:80rpx;'>
+      <image src='../assets/icons/zhuanfa.png' class='zhuan'></image>
+      <view class='fa-word'>
+        <text>转发</text>
+        <text>{{peojectxiang.turn_num}}</text>
+      </view>
+    </button>
+    </view>
+
+    <view class='footer-mny'>
+      <radio-group class="radio-group" bindchange="radioChange">
+        <radio class="radio" value="{{peojectxiang.money1}}">
+          <text>{{peojectxiang.money1}}</text>
+        </radio>
+        <radio class="radio" value="{{peojectxiang.money2}}">
+          <text>{{peojectxiang.money2}}</text>
+        </radio>
+        <radio class="radio" value="{{peojectxiang.money3}}">
+          <text>{{peojectxiang.money3}}</text>
+        </radio>
+      </radio-group>
+    </view>
+      <view style='width:235rpx;height:100%;'>
+     <button class='zhifu' bindtap='zhifu' open-type='getUserInfo' bindgetuserinfo="getUserInfo">确认支付</button>
+    </view>
+  </view>
+  <!-- 弹窗 -->
+  <view class='alretlove'>
+    <view class='lovelaba'>
+      <image src='../assets/icons/laba.png'></image>
+      <view class='asdasd'>爱心喇叭</view>
+    </view>
+    <swiper indicator-dots='{{indicatordos}}' autoplay='{{true}}' interval='{{interv}}' duration='{{durat}}' circular='{{circu}}' vertical='{{vert}}' display-multiple-items='{{displaymu}}'>
+      <block>
+      <swiper-item wx:for="{{pricelist}}" wx:key="index" catchtouchmove='catchTouchMove'>
+        <!-- 弹幕 -->
+        <view class='danmu'>
+          <view class='danimg'>
+            <image src='{{item.image}}'></image>
+          </view>
+          <view class='userino'>
+            <text class='dan-username'>{{item.name}}</text>
+            <text>筹款</text>
+          </view>
+          <view class='userprice'>{{item.sum}}元</view>
+        </view>
+      </swiper-item>
+      </block>
+     </swiper>
+  </view>
+</view>
+ 

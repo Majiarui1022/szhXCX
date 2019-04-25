@@ -1,0 +1,51 @@
+{
+  "pages":[
+    "pages/getmsg/getmsg",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/colmny/colmny"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle":"black",
+    "navigationBarTitleText":"浙狮助残",
+    "enablePullDownRefresh":true,
+    "backgroundColor": "#d8d8d8"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath":"/pages/assets/icons/home.png",
+        "selectedIconPath":"/pages/assets/icons/homes.png",
+        "selectedColor":"#43AC43",
+        "color":"#999999",
+        "backgroundColor":"#fff"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "我的",
+        "iconPath": "/pages/assets/icons/me.png",
+        "selectedIconPath": "/pages/assets/icons/mes.png",
+        "selectedColor": "#43AC43",
+        "color": "#999999",
+        "backgroundColor": "#fff"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "navigateToMiniProgramAppIdList": [
+    "wxe5f52902cf4de896"
+  ]
+}

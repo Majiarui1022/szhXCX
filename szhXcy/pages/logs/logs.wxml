@@ -1,0 +1,34 @@
+<view class='my-home'>
+  <view>
+    <view class='my-tit'>
+      <image src='../assets/icons/bj.png' class='bg-image'></image>
+      <view class='my-head-new'>
+        <view class='my-heade'>
+          <image src='{{userinfo.tip_image}}' class='head'></image>
+        </view>
+        <view class='my-name-box'>
+          <view class='my-name-top'>
+            <input type='text' bindblur='bindKeyInput' value='{{userinfo.name}}'/>
+            <image src='../assets/icons/xiugai.png' class='xiugai'></image>
+          </view>
+          <view>
+            <image src='../assets/icons/65dbbab02b279b1d44f86ee0b63d95e.png' class='aixin'></image>
+            <text class='love-num'>爱心值{{userinfo.oney}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='lishi-juan'>
+    <view class='lis-tit'>
+      <text>历史捐助</text>
+    </view>
+    <view class='list-menu'  wx:for="{{aixinlist}}" wx:key="index">
+      <view class='mu-list' id="{{item.id}}">
+        <text class='list-nume'>{{item.name}}</text>
+        <text class='list-pri'>{{item.money}}元</text>
+      </view>
+    </view>
+   
+  </view>
+</view>
